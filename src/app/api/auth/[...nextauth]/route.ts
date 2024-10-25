@@ -17,6 +17,7 @@ const authOptions: NextAuthOptions = {
             clientSecret: GOOGLE_CLIENT_SECRET,
         }),
     ],
+    debug: true,
 
 };
 
