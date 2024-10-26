@@ -16,6 +16,7 @@ const Navbar = () => {
     async function fetchData() {
       if (session?.user) {
         try {
+          console.log(session.user.email)
           const response = await axios.post("/api/user-credit", { email: session.user.email, name: session.user.name }); 
           const data = response.data; 
           setCredit(data.credits);
