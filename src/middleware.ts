@@ -7,7 +7,8 @@ export async function middleware(req: NextRequest) {
   const protectedRoutes = ['/discover', '/finder'];
 
   if (!token && protectedRoutes.includes(pathname)) {
-    return NextResponse.redirect("https://direct-reach-ai-tmey.vercel.app/api/auth/signin?callbackUrl=https%3A%2F%2Fdirect-reach-ai-tmey.vercel.app%2F");
+    return NextResponse.redirect(new URL('/api/auth/signin', req.url));
+
   }
 //   https://direct-reach-ai-tmey.vercel.app/api/auth/signin?callbackUrl=https%3A%2F%2Fdirect-reach-ai-tmey.vercel.app%2F
 
